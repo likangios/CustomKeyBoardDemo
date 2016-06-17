@@ -44,13 +44,29 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     func newThread() {
         
-        print("date \(NSDate.init())")
+        
+//        NSDate *date = [NSDatedate];
+        
+//        NSTimeZone *zone = [NSTimeZonesystemTimeZone];
+        
+//        NSInteger interval = [zone secondsFromGMTForDate: date];
+        
+//        NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+        
+        
+        let date = NSDate.init()
+        
+        let zone = NSTimeZone.systemTimeZone()
+        
+        let interval = zone.secondsFromGMTForDate(date)
+        
+        let localDate = date.dateByAddingTimeInterval(interval)
+        
+        print("date \(localDate)")
         
         autoreleasepool {
             
-            
-            
-            let date:NSDate = NSDate.init(timeIntervalSinceNow: 10)
+            let date:NSDate = localDate
             
             let  timer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(firefire), userInfo: nil, repeats: true)
             
