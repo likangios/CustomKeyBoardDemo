@@ -60,7 +60,9 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         
         let interval = zone.secondsFromGMTForDate(date)
         
-        let localDate = date.dateByAddingTimeInterval(interval)
+        let  interval2 = interval as Double
+        
+        let localDate = date.dateByAddingTimeInterval(interval2)
         
         print("date \(localDate)")
         
